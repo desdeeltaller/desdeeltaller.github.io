@@ -294,3 +294,16 @@ blockquote p { margin: 0; }
   color: var(--arco);
 }
 h1 .ia, h2 .ia { font-size: .85em; letter-spacing: .06em; }
+
+/* ---------- escríbeme (pie de cada entrada) ---------- */
+.escribeme {
+  margin-top: 44px; padding: 20px 22px;
+  background: var(--surface); border: 1px solid var(--rule-soft);
+  font-size: 16.5px; line-height: 1.6; color: var(--ink-soft);
+}
+.escribeme span {
+  display: block; margin-bottom: 6px;
+  font-family: "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, sans-serif;
+  font-weight: 650; color: var(--ink);
+}
+.escribeme a { color: var(--arco); text-decoration: none; border-bottom: 1px solid var(--arco); }
