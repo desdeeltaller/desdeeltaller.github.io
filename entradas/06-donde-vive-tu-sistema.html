@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>¿Dónde vive tu sistema? · Desde el taller</title>
+<meta name="description" content="Qué es un servidor, una IP, un dominio y el DNS, explicados fácil con la imagen de un local y su letrero. Para principiantes que quieren subir su sistema o su página a internet.">
+<meta name="author" content="Desde el taller">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Desde el taller">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="¿Dónde vive tu sistema?">
+<meta property="og:description" content="Qué es un servidor, una IP, un dominio y el DNS, explicados fácil con la imagen de un local y su letrero. Para principiantes que quieren subir su sistema o su página a internet.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../estilo.css">
+<script src="../tema.js"></script>
+</head>
+<body>
+<div class="hoja">
+
+  <div class="marca">
+    <a class="n" href="../index.html">Desde el taller</a>
+    <span class="s">— notas de alguien que aprendió tarde y a la mala</span>
+    <button class="tema" type="button">Modo oscuro</button>
+  </div>
+
+  <div class="entradilla">
+    <span class="num">Entrada seis · El mapa, parte uno</span>
+    <h1>¿Dónde vive tu sistema?</h1>
+    <p class="bajada">
+      Servidor, dominio y DNS explicados como se le explican a alguien que
+      renta un local y le pone letrero.
+    </p>
+    <p class="firma">
+      Escrito por un herrero. Sin título universitario, con las manos todavía sucias.
+    </p>
+  </div>
+
+  <p class="primera">
+    Hasta aquí les conté mi historia. De aquí en adelante viene lo que prometí en
+    la primera entrada: el mapa que a mí no me dieron. Y voy a empezar por la
+    pregunta que me tuvo trabado más tiempo que ninguna otra.
+  </p>
+
+  <p>
+    Tu sistema ya funciona en tu computadora. Le picas y responde. Ahora quieres
+    que lo use tu esposa desde su consultorio, o tu trabajador desde su teléfono,
+    o un cliente desde su casa. ¿Dónde lo pones?
+  </p>
+
+  <p>
+    Cuando yo me hice esa pregunta, me encontré con un montón de palabras que
+    parecían significar lo mismo y no: hosting, servidor, VPS, dominio, DNS,
+    IP. Compré cosas sin saber qué eran. Así que voy a explicarlo como me
+    hubiera gustado que me lo explicaran a mí: con un local.
+  </p>
+
+  <h2>Piensa en abrir un negocio</h2>
+
+  <p>
+    Si quieres que la gente llegue a tu taller, necesitas cuatro cosas. Un local
+    donde trabajar. Una dirección para que lo encuentren. Un letrero con nombre
+    para que se acuerden de ti. Y que ese nombre aparezca en algún directorio,
+    para que cuando alguien lo busque, lo manden a tu dirección y no a otra.
+  </p>
+
+  <p>
+    En internet es exactamente igual. Nada más que cada cosa tiene un nombre
+    raro.
+  </p>
+
+  <ul class="escalera">
+    <li>
+      <b>El local es el servidor</b>
+      Una computadora que nunca se apaga, en un edificio lleno de computadoras,
+      en algún país. Tú la rentas por mes. Ahí adentro pones tu sistema y ahí
+      trabaja, de día y de noche, aunque tú tengas apagada la tuya.
+    </li>
+    <li>
+      <b>La dirección es la IP</b>
+      Cada servidor tiene un número, algo como 91.107.243.18. Es su dirección
+      exacta en internet. Fea, imposible de recordar, pero es la de a de veras.
+      Con ese número cualquiera puede tocar tu puerta.
+    </li>
+    <li>
+      <b>El letrero es el dominio</b>
+      El nombre bonito: <em>mitaller.com</em>. Lo rentas por año, en un lugar
+      distinto de donde rentas el servidor, igual que el rotulista no es el
+      dueño del local. Ese nombre es tuyo mientras lo sigas pagando, aunque
+      cambies de local mil veces.
+    </li>
+    <li>
+      <b>El directorio es el DNS</b>
+      La lista que conecta el nombre con el número. Cuando alguien escribe
+      <em>mitaller.com</em>, su teléfono consulta el directorio, encuentra que
+      ese nombre apunta a 91.107.243.18, y lo manda para allá. Tú eres quien
+      escribe esa línea en el directorio.
+    </li>
+  </ul>
+
+  <p>
+    Eso es todo. En serio. Cuando alguien me lo dijo así, lo entendí en un
+    minuto. Me había costado meses porque lo iba deduciendo de manuales escritos
+    para gente que ya sabía.
+  </p>
+
+  <h2>Lo que nadie me aclaró y me costó dinero</h2>
+
+  <p>
+    Con la imagen del local ya se entienden solas varias cosas que a mí me
+    tomaron tropiezos. Se las dejo aquí para que no tropiecen ustedes.
+  </p>
+
+  <ul class="lista">
+    <li><b>Son cuentas separadas.</b> El servidor lo pagas en un lado, cada mes. El dominio lo pagas en otro, cada año. Si dejas de pagar el dominio, pierdes el letrero aunque el local siga rentado, y alguien más se lo puede quedar.</li>
+    <li><b>El letrero es lo valioso.</b> El local se cambia: un día te vas a uno más grande o más barato, mueves tu sistema, y nadie se entera. Pero el nombre es el que la gente tiene guardado, el que está en tus tarjetas. Ese no lo sueltes.</li>
+    <li><b>Cambiar de local es cambiar una línea en el directorio.</b> Te mudas de servidor, tienes una IP nueva, y lo único que haces es corregir la línea del DNS para que el nombre apunte al número nuevo. Tarda unas horas en que todos los directorios del mundo se enteren; a eso le llaman propagación, y no es que algo esté fallando, es que está corriendo la voz.</li>
+    <li><b>Hay locales compartidos y locales propios.</b> El hosting compartido es un cuarto en un edificio donde el casero pone las reglas y arregla todo. El VPS es un local propio: haces lo que quieras adentro, pero si se tapa el drenaje, lo destapas tú. Yo empecé directo en el propio sin saber destapar nada. De eso va la siguiente entrada.</li>
+  </ul>
+
+  <div class="aparte">
+    <p>
+      <b>Y el candadito.</b> Cuando el navegador muestra un candado junto al
+      nombre de tu sitio, es porque tienes un certificado: un papel que dice que
+      ese local es de verdad quien dice ser, y que lo que la gente escribe ahí va
+      cerrado y nadie lo lee en el camino. Hoy es gratis y se renueva solo. Si
+      te lo quieren cobrar caro, desconfía.
+    </p>
+  </div>
+
+  <h2>Cómo se ve todo junto</h2>
+
+  <p>
+    Se los cuento con lo mío, sin nombres. Tengo un servidor rentado, un local
+    grande en otro país. Adentro viven varios sistemas: el de mi taller, el del
+    consultorio, uno de asistencias, otros que he hecho por gusto. Cada uno tiene
+    su letrero, su nombre propio, y en el directorio cada nombre apunta al mismo
+    número, porque todos viven en el mismo local. Como una plaza donde cada
+    puerta tiene su rótulo y todas dan a la misma calle.
+  </p>
+
+  <p>
+    Cuando me bloquearon, lo que me quitaron fue la llave del local. El letrero
+    siguió siendo mío, el directorio siguió apuntando al mismo número, pero
+    adentro no podía entrar nadie, ni yo. Ahora que ya conoces las piezas, esa
+    historia se entiende distinta.
+  </p>
+
+  <p>
+    Y aquí una cosa que no es técnica pero es la que más importa: a partir de
+    este momento, cuando te llegue un correo de tu proveedor, ya sabes de qué te
+    está hablando. Ya no es un correo de otro planeta. Es el casero diciéndote
+    que hay ruido en tu local.
+  </p>
+
+  <p class="cierre">
+    Servidor es el local, IP es la dirección, dominio es el letrero, DNS es el
+    directorio. Si te aprendes esa sola línea, ya tienes más mapa del que yo
+    tenía cuando pagué mi primer mes.
+  </p>
+
+  <div class="siguiente">
+    <span>La que sigue</span>
+    <b>Antes de gastar un peso.</b> Qué comprar, qué no, y cuándo de plano no
+    necesitas un servidor.
+  </div>
+
+</div>
+</body>
+</html>

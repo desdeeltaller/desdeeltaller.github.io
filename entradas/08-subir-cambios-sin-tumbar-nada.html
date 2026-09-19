@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subir cambios sin tumbar nada · Desde el taller</title>
+<meta name="description" content="Qué es desplegar, por qué subir archivos por FTP es peligroso, y cómo usar Git, GitHub y el despliegue automático, explicado como una bitácora de obra.">
+<meta name="author" content="Desde el taller">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Desde el taller">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Subir cambios sin tumbar nada">
+<meta property="og:description" content="Qué es desplegar, por qué subir archivos por FTP es peligroso, y cómo usar Git, GitHub y el despliegue automático, explicado como una bitácora de obra.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../estilo.css">
+<script src="../tema.js"></script>
+</head>
+<body>
+<div class="hoja">
+
+  <div class="marca">
+    <a class="n" href="../index.html">Desde el taller</a>
+    <span class="s">— notas de alguien que aprendió tarde y a la mala</span>
+    <button class="tema" type="button">Modo oscuro</button>
+  </div>
+
+  <div class="entradilla">
+    <span class="num">Entrada ocho · El mapa, parte tres</span>
+    <h1>Subir cambios sin tumbar nada</h1>
+    <p class="bajada">
+      Qué es desplegar, por qué no es arrastrar archivos, y cómo se hace solo.
+    </p>
+    <p class="firma">
+      Escrito por un herrero. Sin título universitario, con las manos todavía sucias.
+    </p>
+  </div>
+
+  <p class="primera">
+    Ya tienes el local, el letrero y el directorio. Tu sistema vive en un
+    servidor y la gente lo usa. Y entonces te das cuenta de que le falta un
+    botón, o que una pantalla está mal, y lo arreglas en tu computadora. Ahora
+    viene la pregunta: ¿cómo llevas ese arreglo hasta el servidor sin descomponer
+    lo que ya funciona?
+  </p>
+
+  <p>
+    A eso le llaman desplegar. Y yo lo he hecho de cuatro formas distintas, cada
+    una un poco menos peligrosa que la anterior. Se las cuento en orden, porque
+    el orden es la lección.
+  </p>
+
+  <h2>Primera forma: picándole al panel</h2>
+
+  <p>
+    Cuando me dieron acceso al panel del hosting, no sabía ni qué era. Le piqué
+    por todos lados hasta que encontré una cosa que decía "administrador de
+    archivos". Lo abrí, vi carpetas, entendí que ahí adentro vivía mi página, y
+    entendí que si subía un archivo ahí, aparecía en internet.
+  </p>
+
+  <p>
+    Así empecé. Archivo por archivo. Cambiaba algo en mi computadora, abría el
+    panel, buscaba la carpeta, subía el archivo encima del viejo. Funcionaba. Y
+    nunca me pregunté qué pasaba con el archivo viejo, que es justo la pregunta
+    que debía hacerme.
+  </p>
+
+  <h2>Segunda forma: el programa que arrastra</h2>
+
+  <p>
+    Leyendo más encontré un programa para eso, de esos que te muestran tu
+    computadora de un lado y el servidor del otro, y arrastras archivos de aquí
+    para allá. Lo usé mucho tiempo. Era más rápido que el panel y se sentía
+    profesional.
+  </p>
+
+  <p>
+    Hasta que un día me tronó algo. Arrastré, sobreescribí, y el sistema dejó de
+    funcionar. Y no había manera de regresar, porque el archivo que funcionaba
+    ya no existía: lo acababa de aplastar yo mismo con el que no funcionaba. Me
+    acuerdo de la frustración. No de la falla, sino de no tener a dónde volver.
+  </p>
+
+  <blockquote>
+    <p>
+      Arrastrar archivos no es desplegar. Es soldar directo sobre la pieza
+      terminada sin haberla medido, y sin la pieza vieja para comparar.
+    </p>
+  </blockquote>
+
+  <h2>Tercera forma: en vivo, con la <span class="ia">IA</span></h2>
+
+  <p>
+    Cuando empecé a programar con la <span class="ia">IA</span>, trabajábamos en
+    vivo. Cambio que hacíamos en la computadora, cambio que subíamos directo al
+    servidor. Sin nada en medio. Era emocionante: en minutos veía funcionando lo
+    que acababa de pedir.
+  </p>
+
+  <p>
+    Y era peligrosísimo, por la misma razón de antes, nada más que ahora más
+    rápido. Como no tenía ningún registro de lo que ya estaba hecho, de repente
+    borrábamos cosas interesantes que ya funcionaban. Una pantalla que había
+    quedado bien se perdía porque en el cambio siguiente se aplastó. Y a
+    averiguar qué era lo que tenía antes.
+  </p>
+
+  <div class="aparte">
+    <p>
+      <b>Aquí tengo que ser honesto con algo.</b> Aprender a trabajar con la
+      <span class="ia">IA</span> ha sido un camino largo. No es fácil. Hoy ya es
+      mucho más fácil, pero al principio ella iba muy rápido y yo no tenía cómo
+      frenarla ni cómo regresar cuando se equivocaba, porque no tenía registro de
+      nada. El problema no era la <span class="ia">IA</span>. Era que yo no tenía
+      bitácora.
+    </p>
+  </div>
+
+  <h2>Lo que me faltaba: la bitácora</h2>
+
+  <p>
+    En el taller, cuando una obra es grande, llevamos bitácora. Qué se hizo, qué
+    día, quién, por qué. Si algo sale mal, uno va a la bitácora y ve en qué
+    momento se torció. Y si hay que deshacer, sabes exactamente hasta dónde.
+  </p>
+
+  <p>
+    Para el código existe lo mismo y se llama control de versiones. La
+    herramienta más usada se llama Git. Lo que hace es simple: cada vez que
+    terminas un cambio, lo anotas con una nota, y queda guardado con fecha. Todo
+    el historial completo. Puedes ver cómo estaba cualquier archivo hace un mes,
+    y puedes regresar a ese punto si lo de hoy salió mal.
+  </p>
+
+  <p>
+    Nadie me lo había explicado así. Me lo explicaban con palabras raras, como
+    si fuera cosa de programadores de empresa. Y no: es la bitácora de obra. La
+    que cualquier maestro de obra entiende.
+  </p>
+
+  <h2>Cuarta forma: se sube solo</h2>
+
+  <p>
+    Iterando con la <span class="ia">IA</span>, y viendo videos, entendí que
+    existía una forma de que el despliegue se hiciera solo. Y funciona así.
+  </p>
+
+  <ul class="escalera">
+    <li>
+      <b>Trabajas en tu computadora</b>
+      Haces el cambio, lo pruebas ahí, en tu máquina, hasta que funcione. El
+      servidor ni se entera.
+    </li>
+    <li>
+      <b>Lo anotas en la bitácora</b>
+      Cuando ya funciona, lo guardas en Git con una nota de qué cambiaste. Y esa
+      bitácora la mandas a un lugar en internet donde se guarda, que se llama
+      GitHub. Es como tener la bitácora en la oficina y una copia en la caja
+      fuerte.
+    </li>
+    <li>
+      <b>Un robot lo lleva al servidor</b>
+      En cuanto la bitácora recibe el cambio, se dispara una acción automática
+      que copia al servidor únicamente los archivos que cambiaron. Ni uno más.
+      Tú no arrastras nada, no abres ningún panel. Guardas, y en un minuto está
+      en producción.
+    </li>
+  </ul>
+
+  <p>
+    El día que lo vi funcionar por primera vez, fue excelente. Guardé un cambio,
+    me fui a ver el sitio, y ahí estaba. Y lo mejor no era la velocidad. Lo
+    mejor era que si ese cambio salía mal, la bitácora tenía el anterior, y
+    regresar era guardar otra vez.
+  </p>
+
+  <h2>¿Estoy haciéndolo mal?</h2>
+
+  <p>
+    Me han dicho que sí. Que lo correcto es que el servidor vaya y recoja los
+    cambios de la bitácora, y no que un robot se los lleve. Le pregunté a la
+    <span class="ia">IA</span>, le pregunté a gente que sabe, y la respuesta
+    honesta es esta: son dos formas de hacer lo mismo, y las dos las usan
+    equipos profesionales. Lo que importa no es cuál eliges. Lo que importa es
+    que exista la bitácora y que el camino al servidor sea siempre el mismo, sin
+    manos en medio.
+  </p>
+
+  <p>
+    Lo que sí me falta, y lo digo para que no crean que ya la hice, es un paso
+    de revisión antes de que el cambio llegue a los clientes. Hoy, todo lo que
+    guardo sale directo. Un día voy a poner una parada intermedia. Pero eso es
+    una mejora, no un error.
+  </p>
+
+  <p class="cierre">
+    Panel, arrastrar, en vivo, automático. Cuatro formas, y solo la última tiene
+    a dónde regresar. Si estás arrastrando archivos, no es que estés mal: es que
+    todavía no tienes bitácora. Empieza por ahí.
+  </p>
+
+  <div class="siguiente">
+    <span>La que sigue</span>
+    <b>Los errores que me costaron caro.</b> Uno por uno, con nombre, incluido
+    el que me tumbó el servidor.
+  </div>
+
+</div>
+</body>
+</html>

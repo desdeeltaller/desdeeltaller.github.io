@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El día que me bloquearon · Desde el taller</title>
+<meta name="description" content="Me hackearon el servidor: minaban criptomonedas con él y mi proveedor me bloqueó la IP. Cómo lo descubrí, por dónde entraron y qué aprendí. Contado sin tecnicismos por un herrero.">
+<meta name="author" content="Desde el taller">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Desde el taller">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="El día que me bloquearon">
+<meta property="og:description" content="Me hackearon el servidor: minaban criptomonedas con él y mi proveedor me bloqueó la IP. Cómo lo descubrí, por dónde entraron y qué aprendí. Contado sin tecnicismos por un herrero.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../estilo.css">
+<script src="../tema.js"></script>
+</head>
+<body>
+<div class="hoja">
+
+  <div class="marca">
+    <a class="n" href="../index.html">Desde el taller</a>
+    <span class="s">— notas de alguien que aprendió tarde y a la mala</span>
+    <button class="tema" type="button">Modo oscuro</button>
+  </div>
+
+  <div class="entradilla">
+    <span class="num">Entrada cinco</span>
+    <h1>El día que me bloquearon</h1>
+    <p class="bajada">
+      Dejé de recibir las asistencias de mis trabajadores y no sabía por qué.
+      Dos meses después, mi proveedor me cerró la puerta de mi propio servidor.
+    </p>
+    <p class="firma">
+      Escrito por un herrero. Sin título universitario, con las manos todavía sucias.
+    </p>
+  </div>
+
+  <p class="primera">
+    Lo primero que falló no fue la seguridad. Fue la lista de asistencia.
+  </p>
+
+  <p>
+    Tengo un sistema para que mis trabajadores registren a qué hora llegan y a
+    qué hora se van. Lo hice yo, vive en mi servidor, y funciona solo: ellos
+    marcan, y a mí me llega. Un día dejó de llegarme. Así nomás. Pensé que era
+    el teléfono, luego que era el internet del taller, luego que era cualquier
+    cosa menos lo que era.
+  </p>
+
+  <p>
+    Porque así se presentan estos problemas. No te sale un letrero que diga "te
+    hackearon". Te deja de funcionar algo del negocio, y tú te pones a buscar
+    del lado equivocado.
+  </p>
+
+  <h2>Los correos que no leí</h2>
+
+  <p>
+    Cuando por fin me metí a revisar el correo, ahí estaban. Avisos de mi
+    proveedor, el que me renta el servidor, diciendo que desde mi sitio salía
+    tráfico raro hacia otros sitios. Y aquí viene la parte que más me cuesta
+    escribir: <strong>ya los había visto antes</strong>. Meses antes. Los leí,
+    no les entendí, pensé "ha de ser algo trivial", y los dejé pasar.
+  </p>
+
+  <p>
+    Eran la alarma. Y yo la apagué porque no sabía qué significaba.
+  </p>
+
+  <div class="aparte">
+    <p>
+      <b>Si te llega un correo de tu proveedor y no le entiendes, eso es
+      justamente la señal de que tienes que entenderle.</b> Los correos de
+      cobranza y las promociones se entienden solos. Los que hablan de "tráfico
+      inusual" o "actividad sospechosa" son los que un día te cierran el
+      negocio.
+    </p>
+  </div>
+
+  <p>
+    Dos meses después de esos avisos, mi proveedor bloqueó la dirección de mi
+    servidor. De un día para otro no pude entrar. No a mi sistema del taller, no
+    al de asistencias, no al del consultorio de mi esposa, no a nada. Todo lo que
+    había construido en años estaba ahí, y yo estaba afuera.
+  </p>
+
+  <blockquote>
+    <p>
+      Tres veces me había dicho la vida que todo tenía que vivir en internet.
+      Nadie me dijo que en internet también te lo pueden quitar.
+    </p>
+  </blockquote>
+
+  <h2>Buscar ayuda, y no querer que me ayudaran</h2>
+
+  <p>
+    Hice lo que cualquiera: pedí ayuda. Me recomendaron a una persona en otro
+    país que cobraba barato. Pero me la recomendó alguien de quien yo ya
+    desconfiaba, y nunca llegamos a un acuerdo.
+  </p>
+
+  <p>
+    Esa fue la excusa. La verdad es otra, y ya se las había confesado en la
+    entrada pasada: <strong>yo no quería que nadie más metiera mano.</strong>
+    Mi sistema es mío, lo cuido mucho, y la idea de que un desconocido entrara
+    a verlo por dentro me daba más miedo que el hackeo mismo.
+  </p>
+
+  <p>
+    El mismo celo que años atrás me llevó a programar del lado del servidor, para
+    que nadie leyera mi código, ahora me cerraba la única puerta de salida que
+    tenía. Es curioso cómo un mismo rasgo te sirve en un lado y te estorba en el
+    otro. No he cambiado de rasgo. Nomás aprendí a verlo venir.
+  </p>
+
+  <p>
+    Pasaron días. Semanas. Los trabajadores marcando asistencia en un sistema que
+    no me llegaba. Mi esposa preguntando por lo suyo. Y yo dándole vueltas.
+  </p>
+
+  <h2>Le entré</h2>
+
+  <p>
+    Un día me decidí. Sin ayuda de nadie, sin saber por dónde empezar, con lo
+    único que tenía a la mano: mis preguntas y la <span class="ia">IA</span>
+    para hacérselas.
+  </p>
+
+  <p>
+    No les voy a contar aquí el paso por paso, porque eso merece su propia
+    entrada y porque el paso por paso no es lo importante. Lo importante es lo
+    que encontré cuando por fin pude entrar.
+  </p>
+
+  <p>
+    Alguien llevaba meses adentro de mi servidor. Lo estaba usando para minar
+    criptomonedas, que es una forma de ganar dinero con la computadora de otro,
+    y de paso había regado basura en cinco de mis sitios: páginas ocultas con
+    enlaces a cosas que yo nunca puse. Por eso el tráfico raro. Por eso los
+    avisos. Por eso el bloqueo.
+  </p>
+
+  <p>
+    ¿Y saben por dónde entró?
+  </p>
+
+  <blockquote>
+    <p>
+      Por un archivo de configuración que se me quedó en la carpeta equivocada.
+    </p>
+  </blockquote>
+
+  <p>
+    Un archivo de mi editor de código, de esos que guardan la configuración
+    para subir archivos al servidor, con el usuario dueño de mis sitios y su
+    contraseña adentro, en una carpeta que cualquiera en internet podía abrir. No fue un genio. Fue un programa que
+    recorre millones de sitios buscando exactamente ese descuido, y en el mío lo
+    encontró. Era una puerta con la llave puesta por fuera.
+  </p>
+
+  <h2>Lo que de verdad aprendí</h2>
+
+  <p>
+    Limpié el servidor. Cerré la puerta. Aprendí a revisar quién entra y quién
+    sale. Y mientras lo hacía, me di cuenta de algo que me cambió la forma de ver
+    todo esto:
+  </p>
+
+  <div class="aparte">
+    <p>
+      <b>Yo sabía programar. Lo que no sabía era cuidar.</b> Sabía construir el
+      edificio, pero no sabía cerrar con llave, ni revisar las ventanas, ni leer
+      los avisos del vecino. Y en internet, un edificio sin cuidar no dura.
+    </p>
+    <p>
+      Esa es la mitad que nadie me enseñó. No la programación: lo que viene
+      después. Y por eso existe este blog.
+    </p>
+  </div>
+
+  <p>
+    Hoy el servidor está limpio, cerrado y vigilado. Lo hice yo, con mis manos
+    sucias y mis preguntas tontas, y con la <span class="ia">IA</span> al lado
+    contestándolas una por una, a la hora que fuera, sin cansarse. Al César lo
+    que es del César: sin ella no hubiera podido. Y no lo cuento para que me
+    feliciten: lo
+    cuento porque si yo pude, a mi edad, sin escuela y sin querer que nadie me
+    ayudara, cualquiera que esté leyendo esto puede.
+  </p>
+
+  <p>
+    Lo que sigue en este blog es el mapa. Lo que yo hubiera querido leer antes
+    de rentar mi primer servidor. Empezando por lo más básico: dónde vive tu
+    sistema cuando ya no vive en tu computadora.
+  </p>
+
+  <p class="cierre">
+    Si tienes un correo de tu proveedor sin abrir, ábrelo hoy. Yo lo dejé dos
+    meses. Te ahorro esos dos meses.
+  </p>
+
+  <div class="siguiente">
+    <span>La que sigue</span>
+    <b>¿Dónde vive tu sistema?</b> Servidor, dominio y DNS explicados como se le
+    explican a alguien que renta un local y le pone letrero.
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Los errores que me costaron caro · Desde el taller</title>
+<meta name="description" content="Dominio perdido, contraseñas en el código, respaldos que no restauran, datos cruzados entre clientes y confiar ciegamente en la IA. Seis errores caros y cómo evitarlos.">
+<meta name="author" content="Desde el taller">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Desde el taller">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Los errores que me costaron caro">
+<meta property="og:description" content="Dominio perdido, contraseñas en el código, respaldos que no restauran, datos cruzados entre clientes y confiar ciegamente en la IA. Seis errores caros y cómo evitarlos.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../estilo.css">
+<script src="../tema.js"></script>
+</head>
+<body>
+<div class="hoja">
+
+  <div class="marca">
+    <a class="n" href="../index.html">Desde el taller</a>
+    <span class="s">— notas de alguien que aprendió tarde y a la mala</span>
+    <button class="tema" type="button">Modo oscuro</button>
+  </div>
+
+  <div class="entradilla">
+    <span class="num">Entrada nueve · El mapa, parte cuatro</span>
+    <h1>Los errores que me costaron caro</h1>
+    <p class="bajada">
+      Uno por uno, con nombre. Incluido el que todavía no termino de corregir.
+    </p>
+    <p class="firma">
+      Escrito por un herrero. Sin título universitario, con las manos todavía sucias.
+    </p>
+  </div>
+
+  <p class="primera">
+    Errores cometemos a diario. Uno chico cada rato, de esos que se arreglan en
+    cinco minutos y se olvidan. De esos no va esta entrada. Va de los otros: los
+    que me costaron dinero, o clientes, o meses. Los que hoy me hacen hacer las
+    cosas distinto.
+  </p>
+
+  <p>
+    Los cuento con nombre, porque un error sin nombre no se aprende. Y los
+    cuento como me pasaron, sin maquillarlos, porque si los maquillo no le
+    sirven a nadie.
+  </p>
+
+  <h2>Uno. El letrero que no era mío</h2>
+
+  <p>
+    Perdí el dominio de mi taller. El punto com. El que estaba en mis tarjetas,
+    en mis facturas, en la boca de mis clientes. Lo perdí porque no estaba a mi
+    nombre, no supe cuándo vencía, y cuando me di cuenta ya no se pagó a tiempo.
+    Alguien más se lo quedó.
+  </p>
+
+  <p>
+    Hoy tengo el punto com punto mx, a mi nombre, pagado por adelantado. Pero
+    tuve que rehacer tarjetas, avisar a todos, y todavía hay gente que escribe
+    el viejo y llega a ningún lado. Ya les dije cómo se evita: el letrero se
+    compra uno mismo, con su correo y su tarjeta. Yo lo aprendí perdiéndolo.
+  </p>
+
+  <h2>Dos. Las llaves escritas en la pared</h2>
+
+  <p>
+    Cuando programas, tu sistema necesita contraseñas para conectarse a cosas:
+    a la base de datos, al correo, a servicios de afuera. Yo las escribía
+    directo en el código. En el archivo mismo. Y ese archivo se subía al
+    servidor y se guardaba en la bitácora en internet.
+  </p>
+
+  <p>
+    Cuando por fin hice una auditoría, la contraseña de mi base de datos de
+    producción aparecía en varios lugares. Escrita, tal cual, en archivos que
+    cualquiera con acceso podía leer. Tuve que cambiarlas todas, la del correo,
+    la del bot de mensajes, la de la base de datos, y revisar quién pudo haberlas
+    visto.
+  </p>
+
+  <div class="aparte">
+    <p>
+      <b>Las contraseñas van en un archivo aparte que nunca sale de tu máquina
+      ni del servidor.</b> El código las lee de ahí. Así el código puede viajar,
+      guardarse, compartirse, y las llaves se quedan donde deben. Se llama
+      archivo de entorno y es lo primero que hago hoy en cualquier proyecto.
+    </p>
+  </div>
+
+  <h2>Tres. Doscientos archivos de prueba en la entrada</h2>
+
+  <p>
+    Cuando uno arregla algo, hace archivos de prueba. Uno para ver si la base de
+    datos responde, otro para probar un cálculo, otro que se llama "arreglo
+    final" y luego "arreglo final dos". Yo los hacía y los dejaba ahí, en la
+    carpeta principal del sitio. Y esa carpeta es pública: cualquiera que
+    adivine el nombre del archivo lo puede abrir desde internet.
+  </p>
+
+  <p>
+    Llegué a tener como doscientos. Algunos con la contraseña de la base de
+    datos adentro. Algunos que hacían cambios sin pedir sesión. Estuvieron
+    publicados, al alcance de cualquiera, hasta hace unos días. Lo confirmé
+    entrando al servidor y viéndolos ahí, uno por uno, con la cara caliente.
+    Hoy el servidor tiene una lista de los pocos archivos que sí se pueden abrir
+    desde afuera, y todo lo demás se rechaza aunque exista.
+  </p>
+
+  <h2>Cuatro. El respaldo que nunca sirvió</h2>
+
+  <p>
+    Este es el que más me dolió, porque yo creía que lo tenía resuelto. Mi
+    sistema del taller tiene un botón de "respaldar" y otro de "restaurar". Los
+    hice yo. Los probé cuando los hice. Dormía tranquilo.
+  </p>
+
+  <p>
+    En la auditoría descubrimos tres cosas. Que el respaldo nunca fue
+    restaurable, por un detalle de cómo exportaba las tablas que hacía que al
+    meterlo de vuelta fallara. Que la función de restaurar tenía un error que
+    borraba todos los datos del taller, no reinsertaba nada, y al final decía
+    "restauración exitosa". Y que la base de datos de producción, la de mis
+    clientes, no tenía ningún respaldo automático corriendo.
+  </p>
+
+  <blockquote>
+    <p>
+      Un respaldo que no has restaurado no es un respaldo. Es una esperanza.
+    </p>
+  </blockquote>
+
+  <p>
+    Hoy el respaldo se prueba: se hace, se restaura en un taller de prueba, se
+    cuentan las filas de cada tabla y tienen que ser idénticas. Y la base de
+    datos se respalda sola, todos los días, a un lugar que no es el mismo
+    servidor. Ya no duermo tranquilo por creerlo. Duermo tranquilo porque lo vi.
+  </p>
+
+  <h2>Cinco. Lo de un cliente en la pantalla de otro</h2>
+
+  <p>
+    Mi sistema lo usan varios talleres, cada uno con sus datos. Lo que ve uno no
+    lo debe ver otro, nunca. Eso es lo más básico y lo más sagrado de un sistema
+    con clientes. Y yo tenía hoyos.
+  </p>
+
+  <p>
+    Había puntos de entrada donde el sistema aceptaba el número de taller desde
+    afuera, desde la petición, en vez de tomarlo de la sesión de quien está
+    conectado. Y si no venía, usaba uno por defecto. O sea que con cambiar un
+    número en la dirección se podía asomar a otro taller. Y la tabla de
+    permisos era una sola para todos: si un taller guardaba sus permisos, se los
+    cambiaba a todos los demás sin saberlo.
+  </p>
+
+  <p>
+    Lo arreglamos en un solo día, veinte hallazgos, con un revisor externo de
+    confianza que me hizo cuatro rondas de preguntas hasta que no quedó nada. Y
+    de ahí salió una lista que hoy reviso antes de cada cambio: ¿el taller sale
+    de la sesión y nunca de la petición? ¿Cada tabla nueva está en el respaldo?
+    ¿Los permisos se revisan en el servidor y no nomás en la pantalla? Esa lista
+    vale más que cualquier curso que haya tomado.
+  </p>
+
+  <h2>Seis. Creer que la <span class="ia">IA</span> no se equivoca</h2>
+
+  <p>
+    Ya les dije cuánto me ha ayudado la <span class="ia">IA</span>, y lo
+    sostengo. Pero al principio le creía todo. Me decía "listo, ya quedó", y yo
+    lo subía. Y no había quedado. O había quedado, pero de paso había roto otra
+    cosa que no revisé porque ella no me lo dijo, porque ella tampoco lo sabía.
+  </p>
+
+  <p>
+    Aprender a trabajar con la <span class="ia">IA</span> ha sido tan difícil
+    como aprender a programar. Hay que saber depurar. Hay que saber auditar. Y
+    hay que aprender a usarla a tu favor de la manera correcta, que no es
+    creerle, sino preguntarle mejor. Yo he llegado a usar dos <span
+    class="ia">IA</span> a la vez: una hace el trabajo, la otra lo revisa, y
+    entre las dos me dan un resultado que ninguna sola me daba. Auditar una
+    <span class="ia">IA</span> con otra <span class="ia">IA</span>. Suena raro,
+    pero es lo mismo que pedirle a un compañero que revise tu soldadura antes de
+    entregar.
+  </p>
+
+  <div class="aparte">
+    <p>
+      <b>La <span class="ia">IA</span> es el mejor ayudante que he tenido en mi
+      vida, y sigue siendo un ayudante.</b> El maestro de obra, el que revisa,
+      el que responde por el trabajo, sigo siendo yo. El día que se me olvidó
+      eso fue el día que me costó caro.
+    </p>
+  </div>
+
+  <h2>Y el que todavía no corrijo</h2>
+
+  <p>
+    Hay un error que no es técnico, y que probablemente es el más caro de
+    todos: no he sabido cobrar por mis sistemas. Tengo varios funcionando, con
+    gente usándolos todos los días, y sigo viviendo del taller. Sé que está
+    pasando. Tal vez sé hasta por qué. Y no le he dado la importancia que
+    debería, porque el taller siempre tiene trabajo y siempre hay un sistema
+    nuevo que hacer.
+  </p>
+
+  <p>
+    Lo pongo aquí no porque tenga la solución, sino porque este blog es honesto
+    o no es nada. Ese error sigue abierto. Si algún día lo cierro, tendrá su
+    propia entrada.
+  </p>
+
+  <p class="cierre">
+    Seis errores con nombre y uno sin cerrar. Ninguno me mató, todos me
+    enseñaron, y cada uno hubiera sido evitable si alguien me lo cuenta antes.
+    Por eso te lo cuento.
+  </p>
+
+  <div class="siguiente">
+    <span>La que sigue</span>
+    <b>Trabajar solo sin que te cueste tanto.</b> Cómo sustituir el segundo par
+    de ojos que no tienes.
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cómo rescaté mi servidor, paso por paso · Desde el taller</title>
+<meta name="description" content="Me hackearon el VPS y nadie quiso ayudarme. Cómo rescaté mis sitios y mis bases de datos yo solo en dos noches: respaldo, servidor limpio, contraseñas nuevas, cerrar puertas y encontrar por dónde entraron.">
+<meta name="author" content="Desde el taller">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Desde el taller">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Cómo rescaté mi servidor, paso por paso">
+<meta property="og:description" content="Me hackearon el VPS y nadie quiso ayudarme. Cómo rescaté mis sitios y mis bases de datos yo solo en dos noches: respaldo, servidor limpio, contraseñas nuevas, cerrar puertas y encontrar por dónde entraron.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../estilo.css">
+<script src="../tema.js"></script>
+</head>
+<body>
+<div class="hoja">
+
+  <div class="marca">
+    <a class="n" href="../index.html">Desde el taller</a>
+    <span class="s">— notas de alguien que aprendió tarde y a la mala</span>
+    <button class="tema" type="button">Modo oscuro</button>
+  </div>
+
+  <div class="entradilla">
+    <span class="num">Entrada once</span>
+    <h1>Cómo rescaté mi servidor, paso por paso</h1>
+    <p class="bajada">
+      Para quien esté hoy donde yo estuve: bloqueado, con años de trabajo
+      adentro, y sin nadie que le conteste.
+    </p>
+    <p class="firma">
+      Escrito por un herrero. Sin título universitario, con las manos todavía sucias.
+    </p>
+  </div>
+
+  <p class="primera">
+    En la entrada cinco les conté que me bloquearon el servidor y que un día
+    "le entré". Lo dije en dos palabras porque esa entrada iba de otra cosa.
+    Pero entre el bloqueo y el "le entré" pasaron semanas, y esas semanas son
+    las que le pueden servir a alguien que esté ahí ahora.
+  </p>
+
+  <h2>Primero pedí ayuda. A todos.</h2>
+
+  <p>
+    Andaba desesperado. Se me hacía imposible dejar esa información ahí,
+    tanto trabajo echado a perder. Así que hice lo que uno hace: acudir a la
+    gente.
+  </p>
+
+  <p>
+    Le pregunté a la persona que años atrás me había vendido el dominio y el
+    hosting, que sabe mucho y trabaja en sistemas de una empresa grande. Él
+    mismo alguna vez me había cotizado hacerme un sistema. Me recomendó a
+    alguien. Ese alguien nunca me contestó. Ni un mensaje.
+  </p>
+
+  <p>
+    En una reunión conocí a otro de sistemas y le conté. Me dijo que eso era
+    muy caro, que mejor lo diera por perdido. Así, en una frase, años de
+    trabajo.
+  </p>
+
+  <p>
+    Caí a foros de rescate, muchos. Leí hasta que se me cruzaban las letras.
+    Le pregunté a la <span class="ia">IA</span> mil veces la misma cosa de mil
+    formas. Di con una persona en otro país que cobraba barato, pero no me daba
+    confianza, y con mi servidor no iba a dejar entrar a alguien que no me
+    diera confianza.
+  </p>
+
+  <blockquote>
+    <p>
+      Fue una carrera de obstáculos. Y en cada obstáculo había alguien
+      diciéndome que no se podía, que era caro, o no diciéndome nada.
+    </p>
+  </blockquote>
+
+  <p>
+    Si estás ahí, te digo lo que hubiera querido que me dijeran: sí se puede,
+    no es tan caro si lo haces tú, y nadie va a cuidar tu información como tú.
+    Lo que sigue es cómo.
+  </p>
+
+  <h2>El correo que no quería escribir</h2>
+
+  <p>
+    Antes de poder rescatar nada había que recuperar la llave. Mi proveedor me
+    había bloqueado, y la única forma de que me abrieran era contestarles el
+    correo. Ese que llevaba semanas sin abrir.
+  </p>
+
+  <p>
+    No saben la incertidumbre. No sabía qué decirles, ni cómo, ni en qué tono.
+    Tenía miedo de que la respuesta fuera "no" y ahí sí, todo perdido. Le pedí
+    a la <span class="ia">IA</span> que me ayudara a redactarlo: qué había
+    pasado, qué entendía yo que había pasado, qué iba a hacer para que no se
+    repitiera. Lo leí veinte veces. Lo mandé. Y me senté a esperar.
+  </p>
+
+  <p>
+    Contestaron. Con una reprimenda, por así llamarla: que lo iban a
+    restablecer, pero que no debía volver a pasar, y que no ignorara sus
+    correos. Tenían toda la razón, y me lo tragué entero. Pero abrieron.
+  </p>
+
+  <p>
+    Para mí eso fue un hito. Suena a nada, mandar un correo. Para llegar a
+    mandarlo estuvo difícil. Estuvo difícil.
+  </p>
+
+  <h2>Le entré: dos días, dos noches</h2>
+
+  <p>
+    Un día me decidí. Me senté con la <span class="ia">IA</span> de un lado y
+    mis preguntas del otro, y no me levanté. Fueron dos días con sus dos noches.
+    Muy cansado. Muy estresante. Cada paso era terreno que no conocía.
+  </p>
+
+  <p>
+    Se los cuento en el orden en que hay que hacerlos, no en el orden en que
+    yo los descubrí, que fue más revuelto. Y sin comandos, porque los comandos
+    cambian y la <span class="ia">IA</span> te los da en un minuto; lo que no
+    te da nadie es el orden y el porqué.
+  </p>
+
+  <ul class="escalera">
+    <li>
+      <b>Cero. Contesta el correo del proveedor</b>
+      Sin eso no hay servidor al que entrar. Diles qué pasó, qué entendiste y
+      qué vas a hacer distinto. Con la verdad y sin rodeos. Si te regañan,
+      aguanta el regaño: es el precio de que te abran.
+    </li>
+    <li>
+      <b>Uno. Saca una copia de todo antes de tocar nada</b>
+      Aunque esté sucia. Sobre todo si está sucia. El servidor comprometido es
+      la única copia de tus bases de datos, y también es la evidencia de lo que
+      pasó. Bájalo completo a tu computadora y no lo borres. Yo lo tengo
+      guardado hasta hoy, en una carpeta que dice "no tocar".
+    </li>
+    <li>
+      <b>Dos. No limpies sobre lo sucio: empieza en limpio</b>
+      Quise limpiar el servidor infectado y entendí rápido que no iba a saber
+      si había quedado limpio. Cuando alguien estuvo meses adentro, no sabes
+      qué dejó. Es como querer sacar el óxido de una pieza que ya se comió por
+      dentro: se corta y se hace nueva. Levanté un servidor nuevo, vacío, y
+      empecé de cero.
+    </li>
+    <li>
+      <b>Tres. El código regresa de la bitácora, no del respaldo</b>
+      El respaldo trae tus archivos, pero también trae los del intruso,
+      disfrazados con nombres de los tuyos. Si tienes tu código en Git, lo
+      vuelves a subir desde ahí, limpio. Si no lo tienes, esta es la razón
+      número uno para tenerlo a partir de hoy.
+    </li>
+    <li>
+      <b>Cuatro. Los datos sí salen del respaldo, con cuidado</b>
+      Las bases de datos casi nunca las infectan; lo que quieren es tu
+      máquina, no tus cotizaciones. Las saqué del respaldo, las revisé, y
+      encontré todo: los viajes, los usuarios, los gastos. Nada perdido.
+    </li>
+    <li>
+      <b>Cinco. Contraseñas nuevas. Todas.</b>
+      La de entrar al servidor, la de cada base de datos, la del correo, la de
+      cada servicio conectado. Todas las que existían mientras el intruso
+      estuvo adentro se dan por vistas. No es paranoia: si vio una, vio todas.
+    </li>
+    <li>
+      <b>Seis. Cierra las puertas que no usas</b>
+      Entrar al servidor solo con llave, no con contraseña. Apagar el FTP,
+      que manda contraseñas sin cerrar el sobre. Cada sitio con su propio
+      usuario, para que si uno cae, no caigan los demás: eso fue justo lo que
+      me pasó a mí, cinco sitios contaminados por una sola llave.
+    </li>
+    <li>
+      <b>Siete. Encuentra por dónde entró</b>
+      Si no lo encuentras, va a volver a entrar por el mismo lugar. En mi caso
+      no fue mi llave de entrada, que siempre ha sido llave y no contraseña.
+      Fue un archivo de configuración de mi editor de código, el que usa para
+      subir archivos, con el usuario dueño de mis sitios y su contraseña
+      adentro, que se me subió por accidente a la carpeta pública. Estuvo ahí
+      más de un año antes de que un robot lo encontrara, y como ese usuario
+      era dueño de todo, con esa sola contraseña entraron a todo. Esto lo supe semanas después, revisando el respaldo sucio con
+      la <span class="ia">IA</span>, archivo por archivo, hasta dar con el
+      primero que no era mío.
+    </li>
+    <li>
+      <b>Ocho. Deja algo vigilando</b>
+      Un programa chiquito que cada cinco minutos revisa el servidor y me
+      avisa al teléfono si algo raro aparece. Y los correos del proveedor, que
+      ahora sí leo.
+    </li>
+  </ul>
+
+  <div class="aparte">
+    <p>
+      <b>Lo que encontré adentro, por si te sirve reconocerlo.</b> Un programa
+      que usaba mi servidor para minar criptomonedas, corriendo día y noche.
+      Una "puerta trasera" disfrazada de archivo normal, desde la que el
+      intruso entraba cuando quería. Cientos de páginas ocultas con enlaces a
+      cosas que yo nunca puse, para engañar a los buscadores. Y carpetas que se
+      copiaban a sí mismas con archivos que decían ser videos y eran código.
+      Nada de eso destruyó lo mío. Lo mío seguía ahí, debajo de la basura.
+    </p>
+  </div>
+
+  <h2>Cuando terminé</h2>
+
+  <p>
+    Cuando terminé, no creía lo que había hecho. Se me hacía imposible. Dos
+    noches antes yo era el señor al que le decían que mejor lo diera por
+    perdido, y ahora tenía mis sitios de vuelta, limpios, con sus datos, en un
+    servidor que yo mismo había levantado.
+  </p>
+
+  <p>
+    No fue bonito. Hubo cosas que hice mal en esas dos noches y que corregí
+    semanas después, cuando ya con calma revisé todo con la
+    <span class="ia">IA</span>. Y hubo cosas que hice de más, por miedo. Pero
+    el servidor quedó de pie, y lo levanté yo.
+  </p>
+
+  <blockquote>
+    <p>
+      Nadie me lo rescató porque nadie lo quería tanto como yo. Al final eso
+      fue lo que lo salvó.
+    </p>
+  </blockquote>
+
+  <p class="cierre">
+    Si te bloquearon y tienes años de trabajo adentro: no lo des por perdido.
+    Contesta el correo, saca la copia, empieza en limpio, regresa el código de la bitácora y los
+    datos del respaldo, cambia todas las llaves, cierra las puertas, encuentra
+    el hoyo, y deja algo vigilando. Dos noches. Yo te entiendo, y sí se puede.
+  </p>
+
+  <div class="siguiente">
+    <span>La que sigue</span>
+    Todavía no lo sé. Las ideas llegan de noche.
+  </div>
+
+</div>
+</body>
+</html>
