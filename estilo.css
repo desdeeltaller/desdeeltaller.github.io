@@ -318,3 +318,12 @@ h1 .ia, h2 .ia { font-size: .85em; letter-spacing: .06em; }
 .sobre-link { margin-left: auto; font: 600 11.5px/1 "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; padding: 6px 4px; }
 .sobre-link + .tema { margin-left: 8px; }
 .sobre-link:hover { color: var(--ink); }
+.copiar {
+  margin-left: 8px; vertical-align: baseline;
+  font: 600 11px/1 "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint);
+  background: none; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 5px 9px; cursor: pointer;
+}
+.copiar:hover { color: var(--ink); border-color: var(--ink); }
+.copiar.listo { color: var(--arco); border-color: var(--arco); }
