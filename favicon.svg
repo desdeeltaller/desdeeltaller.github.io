@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#1E5674"/>
+  <!-- yunque, trazo simple -->
+  <path d="M14 26h30c4 0 7 2 7 5v3H37v7l8 8H19l8-8v-7H14z" fill="#EAE9E6"/>
+  <rect x="12" y="20" width="26" height="6" rx="2" fill="#EAE9E6"/>
+</svg>

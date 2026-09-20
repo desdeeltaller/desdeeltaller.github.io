@@ -307,3 +307,14 @@ h1 .ia, h2 .ia { font-size: .85em; letter-spacing: .06em; }
   font-weight: 650; color: var(--ink);
 }
 .escribeme a { color: var(--arco); text-decoration: none; border-bottom: 1px solid var(--arco); }
+.pie a { color: var(--arco); text-decoration: none; border-bottom: 1px solid var(--arco); }
+.aparte .lista { margin: 14px 0 0; }
+.aparte .lista li { font-size: 16px; }
+.firma time { display: block; margin-top: 4px; color: var(--ink-faint); }
+.volver { margin-top: 34px; font-family: "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, sans-serif; font-size: 13.5px; }
+.volver a { color: var(--ink-faint); text-decoration: none; letter-spacing: .06em; text-transform: uppercase; }
+.volver a::before { content: "\2190\00a0"; }
+.volver a:hover { color: var(--arco); }
+.sobre-link { margin-left: auto; font: 600 11.5px/1 "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; padding: 6px 4px; }
+.sobre-link + .tema { margin-left: 8px; }
+.sobre-link:hover { color: var(--ink); }
